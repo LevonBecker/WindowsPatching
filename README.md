@@ -1,6 +1,7 @@
 # Windows Patching PowerShell Module
 
 [HowTo Use](http://www.bonusbits.com/main/HowTo:Use_Windows_Patching_PowerShell_Module_to_Automate_Patching_with_WSUS_as_the_Client_Patch_Source)
+
 [Module Info](http://www.bonusbits.com/main/Automation:Windows_Patching_PowerShell_Module)
 
 ## Setup Summary
@@ -30,7 +31,7 @@ Add code to PowerShell user profile script to Import and run Set-WindowsPatching
 # LOAD WINDOWSPATCHING MODULE
 $ModuleList = Get-Module -ListAvailable | Select -ExpandProperty Name
 If ($ModuleList -contains 'WindowsPatching') {
-	Import-Module –Name WindowsPatching
+	Import-Module ï¿½Name WindowsPatching
 }
 
 # REMOVE TEMP MODULE LIST
