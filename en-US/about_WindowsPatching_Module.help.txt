@@ -1,0 +1,67 @@
+TOPIC
+    about_WindowsPatching_Module
+
+SHORT DESCRIPTION
+    A PowerShell module for Install Windows Patches, Upgrading VmTools, Upgrading VmHardware and Testing WSUS Client Settings on Remote Computers.
+
+LONG DESCRIPTION   
+    The following CmdLets are loaded in the current session when you import the module:
+
+	Set-WindowsPatchingDefaults
+	---------------------------
+	Run this first.
+
+	This cmdlet is used to set several defaults that are used by the other cmdlets and
+	is needed for them to function. The only parameters that must be set for your 
+	environment are the -vCenter and -UpdateServerURL. The rest are path related and
+	will default to the USERPROFILE.
+
+	The other parameters for paths that have defaults can be used to change the log,
+	hostlist and results folder and file locations.
+
+	This cmdlet can be ran after the module is imported with a shortcut or in your PowerShell
+	profile script.
+
+	EXAMPLE:
+	$ENV:USERPROFILE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+
+	# LOAD WINDOWSPATCHING MODULE
+	$ModuleList = Get-Module -ListAvailable | Select -ExpandProperty Name
+	If ($ModuleList -contains 'WindowsPatching') {
+	     Import-Module –Name WindowsPatching
+	}
+	
+	If ($ModuleList) {
+	     Remove-Variable -Name ModuleList
+	}
+	
+	# SET WINDOWS PATCHING DEFAULTS
+	If ((Get-Module | Select-Object -ExpandProperty Name | Out-String) -match "WindowsPatching") {
+	     Set-WindowsPatchingDefaults -vCenter "vcenter01.domain.com" -UpdateServerURL "https://wsus01.domain.com" -Quiet
+	}
+
+
+	Test-WSUSClient
+	---------------
+	Use Test-WSUSClient to check a single host or multiple for the correct WSUS registry
+	Settings for your environment.  
+
+	Plus, it will force a GPO update and reregister with
+	the WSUS server unless you use the switches to skip those tasks.
+
+
+	Install-Patches
+	---------------
+	This is the main cmdlet to use after preparations are completed to install approved Windows patches,
+	check/update Vmware tools, check/update Vmware VM hardware version.
+
+	It can be used for a single host or multiple.
+
+
+
+
+SEE ALSO
+    about_Modules
+    Get-Module
+    Import-Module
+    Remove-Module
