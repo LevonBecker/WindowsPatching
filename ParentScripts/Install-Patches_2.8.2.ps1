@@ -218,12 +218,10 @@ Function Install-Patches {
 .PARAMETER SkipRebootWarning
 	If this switch is present the reboot acknowledgement prompt will be skipped.
 .LINK
-	http://wiki.bonusbits.com/main/PSScript:Install-Patches
-	http://wiki.bonusbits.com/main/PSModule:WindowsPatching
-	http://wiki.bonusbits.com/main/HowTo:Use_WindowsPatching_PowerShell_Module_to_Automate_Patching_with_WSUS_as_the_Client_Patch_Source
-	http://wiki.bonusbits.com/main/HowTo:Enable_.NET_4_Runtime_for_PowerShell_and_Other_Applications
-	http://wiki.bonusbits.com/main/HowTo:Setup_PowerShell_Module
-	http://wiki.bonusbits.com/main/HowTo:Enable_Remote_Signed_PowerShell_Scripts
+	http://www.bonusbits.com/wiki/HowTo:Use_Windows_Patching_PowerShell_Module
+	http://www.bonusbits.com/wiki/HowTo:Enable_.NET_4_Runtime_for_PowerShell_and_Other_Applications
+	http://www.bonusbits.com/wiki/HowTo:Setup_PowerShell_Module
+	http://www.bonusbits.com/wiki/HowTo:Enable_Remote_Signed_PowerShell_Scripts
 #>
 
 #endregion Help
